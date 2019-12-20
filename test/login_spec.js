@@ -7,7 +7,7 @@ const config = require("../config/main-config")
 describe("Login Page Tests", () => {
     beforeEach(() => {
         // Open the Login Page URL
-        browser.url(config.baseUrl);
+        browser.url("./");
     })
 
     it("should display all Login page elements", () => {

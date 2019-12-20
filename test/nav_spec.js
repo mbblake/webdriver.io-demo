@@ -4,7 +4,7 @@ const config = require("../config/main-config");
 
 describe("Header Page Tests", () => {
     beforeEach(() => {
-        browser.url(config.baseUrl);
+        browser.url("./");
     })
 
     it("should display all Nav page elements", () => {

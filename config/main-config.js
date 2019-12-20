@@ -1,4 +1,4 @@
 module.exports = {
-    baseUrl: "C:/Users/Matt/Desktop/JavaScript Stuff/projects/Superhero-tests/web/index.html",
+    baseUrl: "https://mattblakeqa.github.io/",
     newHeroName: "Peanut"
 }

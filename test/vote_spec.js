@@ -5,7 +5,7 @@ const config = require("../config/main-config")
 
 describe("Vote Page Tests", () => {
     beforeEach(() => {
-        browser.url(config.baseUrl);
+        browser.url("./");
 
         loginPage.logIn();
     })

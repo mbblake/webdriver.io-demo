@@ -1,5 +1,6 @@
 const elementCommands = require("./custom-commands/elementCommands");
 const browserCommands = require("./custom-commands/browserCommands");
+const config = require("./config/main-config");
 
 exports.config = {
     //
@@ -94,7 +95,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: "",
+    baseUrl: config.baseUrl,
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
