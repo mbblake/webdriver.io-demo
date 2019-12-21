@@ -1,6 +1,7 @@
-let headerPage = require("../page-objects/header_page")
-let loginPage = require("../page-objects/login_page")
-const config = require("../config/main-config")
+const headerPage = require("../page-objects/header_page")
+const loginPage = require("../page-objects/login_page")
+const headerData = require("../page-data/header_data")
+
 
 describe("Header Page Tests", () => {
     beforeEach(() => {
@@ -11,11 +12,11 @@ describe("Header Page Tests", () => {
 
     it("should contain all Header page elements", () => {
         expect(headerPage.headerTitle.isDisplayed()).to.be.true;
-        expect(headerPage.headerTitle.getText()).to.equal("Superhero Roster");
+        expect(headerPage.headerTitle.getText()).to.equal(headerData.title);
 
         expect(headerPage.headerImage.isDisplayed()).to.be.true;
 
         expect(headerPage.headerBody.isDisplayed()).to.be.true;
-        expect(headerPage.headerBody.getText()).to.equal("Imagine that you are tasked with building a team of Superheros to save the world. We have given you a few heroes to start with. Add as many heros as you would like to round out your dream team.");
+        expect(headerPage.headerBody.getText()).to.equal(headerData.bodyMessage);
     })
 })

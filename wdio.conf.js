@@ -1,6 +1,6 @@
-const elementCommands = require("./custom-commands/elementCommands");
-const browserCommands = require("./custom-commands/browserCommands");
-const config = require("./config/main-config");
+const elementCommands = require("./custom-commands/element_commands");
+const browserCommands = require("./custom-commands/browser_commands");
+const config = require("./config/main_config");
 
 exports.config = {
     //

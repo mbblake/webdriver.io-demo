@@ -1,18 +1,14 @@
-// Tests for Login Page
-
-// Page object file for the Login page
 const loginPage = require("../page-objects/login_page")
-const config = require("../config/main-config")
+const loginData = require("../page-data/login_data")
 
 describe("Login Page Tests", () => {
     beforeEach(() => {
-        // Open the Login Page URL
         browser.url("./");
     })
 
     it("should display all Login page elements", () => {
         expect(loginPage.titleText.isDisplayed()).to.be.true;
-        expect(loginPage.titleText.getText()).to.equal("Welcome. Please Log In.");
+        expect(loginPage.titleText.getText()).to.equal(loginData.title);
 
         expect(loginPage.emailFieldLabel.isDisplayed()).to.be.true;
         expect(loginPage.emailFieldInput.isDisplayed()).to.be.true;
@@ -33,28 +29,28 @@ describe("Login Page Tests", () => {
         loginPage.submitButton.click();
 
         expect(loginPage.loginErrorMessage.isDisplayed()).to.be.true;
-        expect(loginPage.loginErrorMessage.getText()).to.equal("An email and password are required.");
+        expect(loginPage.loginErrorMessage.getText()).to.equal(loginData.errorMessage);
     })
 
     it("should display error message when no password entered", () => {
-        loginPage.emailFieldInput.setValue("test@test.com");
+        loginPage.emailFieldInput.setValue(loginData.exampleUser1.email);
         loginPage.submitButton.click();
 
         expect(loginPage.loginErrorMessage.isDisplayed()).to.be.true;
-        expect(loginPage.loginErrorMessage.getText()).to.equal("An email and password are required.");
+        expect(loginPage.loginErrorMessage.getText()).to.equal(loginData.errorMessage);
     })
 
     it("should display error message when no email entered", () => {
-        loginPage.passwordFieldInput.setValue("testpassword");
+        loginPage.passwordFieldInput.setValue(loginData.exampleUser1.password);
         loginPage.submitButton.click();
 
         expect(loginPage.loginErrorMessage.isDisplayed()).to.be.true;
-        expect(loginPage.loginErrorMessage.getText()).to.equal("An email and password are required.");
+        expect(loginPage.loginErrorMessage.getText()).to.equal(loginData.errorMessage);
     })
 
     it("should log user in", () => {
-        loginPage.passwordFieldInput.setValue("testpassword");
-        loginPage.emailFieldInput.setValue("test@test.com");
+        loginPage.passwordFieldInput.setValue(loginData.exampleUser1.password);
+        loginPage.emailFieldInput.setValue(loginData.exampleUser1.email);
         loginPage.submitButton.click();
     })
 })
