@@ -9,10 +9,6 @@ describe("Header Page Tests", () => {
         loginPage.logIn();
     })
 
-    afterEach(() => {
-
-    })
-
     it("should contain all Header page elements", () => {
         expect(headerPage.headerTitle.isDisplayed()).to.be.true;
         expect(headerPage.headerTitle.getText()).to.equal("Superhero Roster");

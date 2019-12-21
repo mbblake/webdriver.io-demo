@@ -2,7 +2,6 @@ let votePage = require("../page-objects/vote_page")
 let loginPage = require("../page-objects/login_page")
 const config = require("../config/main-config")
 
-
 describe("Vote Page Tests", () => {
     beforeEach(() => {
         browser.url("./");
